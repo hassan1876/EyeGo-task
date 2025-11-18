@@ -1,5 +1,5 @@
 export default class IMessageProducerPort{
-    sendActivityLog(ActivityLog){
+    sendActivityLog(activityLog){
         throw new Error('Method not implemented')
     }
 }
