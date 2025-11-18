@@ -1,4 +1,4 @@
-import { ALLOWED_ACTIONS } from "../constants/ActionType";
+import { ALLOWED_ACTIONS } from "../constants/ActionType.js";
 export default class ActivityLog {
     constructor({userId,action,timestamp}){
         if(!userId) throw new Error("user ID is required");

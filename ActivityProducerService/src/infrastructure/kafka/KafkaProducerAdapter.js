@@ -1,7 +1,8 @@
-import IMessageProducerPort from "../../application/ports/IMessageProducerPort"
+import IMessageProducerPort from "../../application/ports/IMessageProducerPort.js"
 import {Kafka} from "kafkajs"
 export default class KafkaProducerAdapter extends IMessageProducerPort {
     constructor({brokerUrl,topic}){
+        super()
         this.brokerUrl = brokerUrl
         this.topic = topic
         this.kafka = new Kafka({

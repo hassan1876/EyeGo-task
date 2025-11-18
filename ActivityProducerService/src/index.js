@@ -1,8 +1,8 @@
 import express, { json } from 'express';
 import dotenv from 'dotenv';
-import createLogRouter from './api/routes/LogRouter'
-import SendActivityService from './application/services/SendActivityLogService'
-import KafkaProducerAdapter from './infrastructure/kafka/KafkaProducerAdapter'
+import createLogRouter from './api/routes/LogRouter.js'
+import SendActivityService from './application/services/SendActivityLogService.js'
+import KafkaProducerAdapter from './infrastructure/kafka/KafkaProducerAdapter.js'
 
 
 dotenv.config()
@@ -16,7 +16,7 @@ const sendActivityService = new SendActivityService({
     messageProducer:messageProducer
 })
 
-(async () => {
+;(async () => {
     await messageProducer.connect()
     
     app.use(json())
