@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+npm-debug.log*
+.env
+.DS_Store
+*.log
+*.tgz
+*.zip
+*.rar
+*.7z
+*.gz
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.development
+.env.production
+.env.test
+
+# Test results
+junit.xml
+mocha.json
+
+# Other temporary files
+tmp/
+temp/
