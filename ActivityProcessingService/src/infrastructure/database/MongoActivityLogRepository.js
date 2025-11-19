@@ -19,10 +19,8 @@ export default class MongoActivityLogRepository extends IActivityLogRepository {
 
     async connect(connectionString) {
         try {
-            await mongoose.connect(connectionString, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            })
+            await mongoose.connect(connectionString)
+            
         } catch (e) {
             throw e
         }
