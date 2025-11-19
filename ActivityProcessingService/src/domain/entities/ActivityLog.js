@@ -3,6 +3,6 @@ export default class ActivityLog {
         this.userId = userId
         this.action = action
         this.timestamp = timestamp
-        this.recieveAt = Date.now()
+        this.recievedAt = Date.now()
     }
 }
