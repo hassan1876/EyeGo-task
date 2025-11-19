@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
-import ProcessActivityLog from './src/application/services/ProcessActivityLogService.js'
+import ProcessActivityLog from './application/services/ProcessActivityLogService.js'
 import KafkaConsumerAdapter from './infrastructure/kafka/KafkaConsumerAdapter.js'
-import MongoActivityLogRepository from './src/infrastructure/database/MongoActivityLogRepository.js'
+import MongoActivityLogRepository from './infrastructure/database/MongoActivityLogRepository.js'
 
 dotenv.config()
 const mongoActivityLogRepo = new MongoActivityLogRepository({
