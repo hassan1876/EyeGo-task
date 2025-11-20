@@ -15,6 +15,25 @@ A brief description of your project and its purpose.
 
 ---
 
+## Architecture Choices
+
+The project is split into three microservices:
+
+1. **Producer Service**: Responsible for producing messages to Kafka.
+2. **Consumer Service**: Processes messages from Kafka and handles business logic.
+3. **Query Service**: Provides API endpoints to query processed data.
+
+Each service follows **Domain-Driven Design (DDD)** principles and has the following structure:
+
+* **domain/**: Defines the entities of the service.
+* **application/**: Contains business logic, depends only on interfaces.
+* **infrastructure/**: Concrete implementation of infrastructure (DB, message queue, etc.).
+* **API/**: Defines the routes and HTTP endpoints.
+* **index.js**: Entry point that connects and combines the service.
+
+
+---
+
 ## Prerequisites
 
 Make sure you have installed the following tools:
@@ -62,16 +81,6 @@ Start the service locally:
 npm run start
 ```
 ---
-## Architecture choices
-Splitted the service into three microservices producer-service, consumer-service(processing), query-service
-and to adhere to the DDD ( Domain-Driven-Design ) each service have:
-    domain directory defining its entities
-    application directory defining buisness logic and dpends on interface only
-    infrastructure directory define the concrete implementation of infrastructure like DB, message queue
-    API directory define the routes
-    index file combining and connecting the whole service
----
-
 ## License
 
 MIT License © Hassan Magdi
