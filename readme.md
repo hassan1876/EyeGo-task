@@ -39,7 +39,6 @@ Make sure you have installed the following tools:
 
 * [Node.js](https://nodejs.org/) >= 18.x
 * [Docker](https://www.docker.com/) >= 24.x
-* [Docker Compose](https://docs.docker.com/compose/) >= 2.x
 * [MongoDB](https://www.mongodb.com/)
 * [Kafka](https://kafka.apache.org/) 
 
