@@ -13,7 +13,17 @@ export default class ActivityLogQueryService {
             page: parseInt(req.query.page ?? 1),
             pageSize: parseInt(req.query.limit ?? 10)
         })
-        const result =  this.repo.find(logQuery)
-        return result
+        const result = await this.repo.find(logQuery)
+        const totalPages = Math.ceil(result.totalCount / logQuery.pageSize);
+        const hasNext = logQuery.page < totalPages;
+        const hasPrevious = logQuery.page > 1;
+        return {
+            data: result.data,
+            totalCount: result.totalCount,
+            page: logQuery.page,
+            pageSize: logQuery.pageSize,
+            hasNext,
+            hasPrevious
+        };
     }
 }

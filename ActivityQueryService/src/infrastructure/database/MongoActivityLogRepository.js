@@ -36,12 +36,13 @@ export default class MongoActivityLogRepository extends IActivityLogRepositery {
                 ...(query.to && { $lte:query.to}),
             }
         }
+        const totalCount = await this.model.countDocuments(mongoFilter); 
         const skip = (query.page - 1)* query.pageSize
         const limit = query.pageSize
         const data = await this.model.find(mongoFilter)
             .skip(skip)
             .limit(limit)
             .sort({timestamp:-1})
-        return data
+        return {data,totalCount}
     }
 }
