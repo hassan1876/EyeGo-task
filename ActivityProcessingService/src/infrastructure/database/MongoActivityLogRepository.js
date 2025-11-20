@@ -12,6 +12,8 @@ export default class MongoActivityLogRepository extends IActivityLogRepository {
                 recievedAt: { type:Date, required: true }
             }
         )
+        
+        ActivityLogSchema.index({ userId: 1, action: 1, timestamp: -1 });
 
         this.ActivityLogModel = mongoose.model('ActivityLog', ActivityLogSchema)
         this.connect(connectionString)
