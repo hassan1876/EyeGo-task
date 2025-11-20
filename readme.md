@@ -1,6 +1,6 @@
 # Project Name
 
-A brief description of your project and its purpose.
+##Task overview
 ---
 This project implements a scalable event-driven microservice using Node.js, Express, and Kafka to process user activity logs and store them in MongoDB. The service is containerized with Docker for easy deployment.
 ---
