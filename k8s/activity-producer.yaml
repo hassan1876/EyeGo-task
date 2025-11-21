@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activity-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: activity-producer
+  template:
+    metadata:
+      labels:
+        app: activity-producer
+    spec:
+      containers:
+      - name: activity-producer
+        image: hassan196/activityproducerservice:v2  # updated image name
+        env:
+          - name: PORT
+            value: "3000"
+          - name: KAFKA_BROKER
+            value: "kafka:9092"
+          - name: KAFKA_TOPIC_ID
+            value: "activity-logs"
+        ports:
+          - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: activity-producer
+spec:
+  type: ClusterIP
+  selector:
+    app: activity-producer
+  ports:
+    - port: 3000
+      targetPort: 3000
