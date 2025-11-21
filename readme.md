@@ -1,16 +1,18 @@
 # Eyego Task
 
-## Task overview
+## Task Overview
+
 ---
-This project implements a scalable event-driven microservice using Node.js, Express, and Kafka to process user activity logs and store them in MongoDB. The service is containerized with Docker for easy deployment.
----
+
+## This project implements a scalable event-driven microservice using Node.js, Express, and Kafka to process user activity logs and store them in MongoDB. The service is containerized with Docker for easy deployment.
 
 ## Features
 
 * Kafka producer and consumer for real-time log processing
-* Stores processed logs in MongoDB with indexing
+* Stores processed logs in MongoDB with **indexing** for faster queries
 * Dockerized for consistent environment setup
 * Easily extendable microservice architecture
+* **Exposed API** for querying processed logs
 
 ---
 
@@ -30,6 +32,17 @@ Each service follows **Domain-Driven Design (DDD)** principles and has the follo
 * **API/**: Defines the routes and HTTP endpoints.
 * **index.js**: Entry point that connects and combines the service.
 
+---
+
+## Accessing the Exposed API
+
+You can query the processed logs via the API. For example:
+
+```
+GET http://34.58.4.76:3000/api/log?page=1&limit=10&action=click
+```
+
+This endpoint supports **pagination** and **filtering by action type**.
 
 ---
 
@@ -40,7 +53,7 @@ Make sure you have installed the following tools:
 * [Node.js](https://nodejs.org/) >= 18.x
 * [Docker](https://www.docker.com/) >= 24.x
 * [MongoDB](https://www.mongodb.com/)
-* [Kafka](https://kafka.apache.org/) 
+* [Kafka](https://kafka.apache.org/)
 
 ---
 
@@ -78,7 +91,9 @@ Start the service locally:
 ```bash
 npm run start
 ```
+
 ---
+
 ## License
 
 MIT License © Hassan Magdi
