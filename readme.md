@@ -1,9 +1,8 @@
-# Project Name
+# Eyego Task
 
-A brief description of your project and its purpose.
-
-> This project implements a scalable event-driven microservice using **Node.js**, **Express**, and **Kafka** to process user activity logs and store them in **MongoDB**. The service is containerized with **Docker** for easy deployment.
-
+## Task overview
+---
+This project implements a scalable event-driven microservice using Node.js, Express, and Kafka to process user activity logs and store them in MongoDB. The service is containerized with Docker for easy deployment.
 ---
 
 ## Features
@@ -40,7 +39,6 @@ Make sure you have installed the following tools:
 
 * [Node.js](https://nodejs.org/) >= 18.x
 * [Docker](https://www.docker.com/) >= 24.x
-* [Docker Compose](https://docs.docker.com/compose/) >= 2.x
 * [MongoDB](https://www.mongodb.com/)
 * [Kafka](https://kafka.apache.org/) 
 
@@ -51,8 +49,8 @@ Make sure you have installed the following tools:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/hassan1876/EyeGo-task.git
+cd EyeGo-task
 ```
 
 ### Install dependencies
